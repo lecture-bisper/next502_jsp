@@ -13,3 +13,8 @@
 	2. JSP 기본 문법 : 내장객체 out, response
 	3. JSP 기본 문법 : 내장객체 application, exception
 	4. JSP 기본 문법 : 내장객체영역 pageContext
+3. 3일차
+	1. JSP 기본 문법 : 내장객체영역 request
+	2. JSP 기본 문법 : 내장객체영역 session
+	3. JSP 기본 문법 : 내장객체영역 application
+	4. JSP 기본 문법 : 쿠키 사용
