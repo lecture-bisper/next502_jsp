@@ -18,3 +18,8 @@
 	2. JSP 기본 문법 : 내장객체영역 session
 	3. JSP 기본 문법 : 내장객체영역 application
 	4. JSP 기본 문법 : 쿠키 사용
+	5. JSP 기본 문법 : 쿠키 사용 예시(팝업창 관리, 아이디 저장)
+4. 4일차
+	1. JSP 기본 문법 : MySql 설치
+	2. JSP 기본 문법 : MySql 기본 사용 명령어
+	3. JSP 기본 문법 : JDBC 사용하기, JDBC로 SELECT 문 실행
