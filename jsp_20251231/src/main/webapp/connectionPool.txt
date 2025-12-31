@@ -1,0 +1,40 @@
+<!--  server.xml 파일 내용 -->
+  <GlobalNamingResources>
+    <!-- Editable user database that can also be used by
+         UserDatabaseRealm to authenticate users
+    -->
+    <Resource name="UserDatabase" auth="Container"
+              type="org.apache.catalina.UserDatabase"
+              description="User database that can be updated and saved"
+              factory="org.apache.catalina.users.MemoryUserDatabaseFactory"
+              pathname="conf/tomcat-users.xml" />
+
+<!--    tomcat 서버를 통한 커넥션 풀을 사용하기 위한 설정 -->
+
+<!--    name : 설정을 구분하기 위한 이름, context.xml 파일에서 사용 -->
+<!--    auth : 커넥션 풀을 관리할 관리자 선택 (Container, Application) -->
+<!--    type : 데이터소스로 사용할 클래스명 -->
+<!--    initialSize : 커넥션 풀의 최초 초기화 과정에서 미리 생성해 놓은 연결의 수 설정 -->
+<!--    minIdle : 최소한으로 유지할 연결 수 설정 (기본값 0) -->
+<!--    maxIdle : 풀을 반납할 때 최대로 유지할 수 있는 연결 수 설정 (기본값 8) -->
+<!--    maxTotal : 동시에 연결할 수 있는 최대 연결 수 설정 (기본값 8) -->
+<!--    maxWaitMillis : 새로운 연결 요청이 있을 경우 최대 대기 시간 설정 -->
+<!--    driverClassName : 사용할 JDBC 드라이버 명 -->
+<!--    url : 데이터베이스 접속 URL -->
+<!--    username : 데이터베이스 사용자 ID -->
+<!--    password : 데이터베이스 사용자 PW -->
+    <Resource
+        name="global_dbcp_mysql"
+        auth="Container"
+        type="javax.sql.DataSource"
+        initialSize="0"
+        minIdle="5"
+        maxIdle="20"
+        maxTotal="20"
+        maxWaitMillis="5000"
+        driverClassName="com.mysql.cj.jdbc.Driver"
+        url="jdbc:mysql://localhost:3306/next502db?characterEncoding=UTF-8&amp;serverTimezone=UTC"
+        username="test1"
+        password="next502" />
+
+  </GlobalNamingResources>
