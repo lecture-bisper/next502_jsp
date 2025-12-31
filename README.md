@@ -23,3 +23,7 @@
 	1. JSP 기본 문법 : MySql 설치
 	2. JSP 기본 문법 : MySql 기본 사용 명령어
 	3. JSP 기본 문법 : JDBC 사용하기, JDBC로 SELECT 문 실행
+5. 5일차
+	1. JSP 기본 문법 : JDBC 로 DB 연결하기, JDBC DB 연결용 클래스
+	2. JSP 기본 문법 : 커넥션 풀로 DB 연결
+	3. JSP 기본 문법 : Statement 사용하기 (select, insert, update, delete)
