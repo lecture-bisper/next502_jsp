@@ -27,3 +27,7 @@
 	1. JSP 기본 문법 : JDBC 로 DB 연결하기, JDBC DB 연결용 클래스
 	2. JSP 기본 문법 : 커넥션 풀로 DB 연결
 	3. JSP 기본 문법 : Statement 사용하기 (select, insert, update, delete)
+6. 6일차
+	1. JSP 기본 문법 : PreparedStatement 사용하기(insert, select, update, delete)
+	2. JSP 기본 문법 : PreparedStatement 로 한번에 여러개의 데이터 입력하기
+	3. JSP 기본 문법 : Session

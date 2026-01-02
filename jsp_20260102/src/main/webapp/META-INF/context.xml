@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/">
+
+  <Resource
+      name="dbcp_mysql"
+      auth="Container"
+      type="javax.sql.DataSource"
+      initialSize="0"
+      minIdle="5"
+      maxIdle="20"
+      naxTotal="20"
+      maxWaitMillis="5000"
+      driverClassName="com.mysql.cj.jdbc.Driver"
+      url="jdbc:mysql://localhost:3306/next502db?characterEncoding=UTF-8&amp;serverTimezone=UTC"
+      username="test1"
+      password="next502"
+    />
+</Context>
