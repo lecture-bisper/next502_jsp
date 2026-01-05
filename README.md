@@ -31,3 +31,7 @@
 	1. JSP 기본 문법 : PreparedStatement 사용하기(insert, select, update, delete)
 	2. JSP 기본 문법 : PreparedStatement 로 한번에 여러개의 데이터 입력하기
 	3. JSP 기본 문법 : Session
+7. 7일차
+	1. JSP 기본 문법 : session 사용하기
+	2. JSP 기본 문법 : 세션으로 로그인 처리
+	3. JSP 기본 문법 : DTO, DAO, 로그인 처리2
