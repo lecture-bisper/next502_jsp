@@ -143,8 +143,37 @@ public class MemberDAO {
 //  회원 가입 가능 여부
 
 //  회원 가입
-  public void signup(MemberDTO member) {
+  public int signup(MemberDTO member) {
+    int result = 0;
 
+//    1. 회원 가입 insert 문 생성
+//    2. PreparedStatement 객체 생성
+//    3. ? 부분에 데이터 입력
+//    4. PreparedStatement 로 sql 실행
+//    5. 결과를 받아서 리턴
+    String sql = "INSERT INTO member(id, pass, name, regidate) ";
+    sql += "VALUES (?, ?, ?, now()) ";
+
+    try {
+      pstmt = conn.prepareStatement(sql);
+      pstmt.setString(1, member.getId());
+      pstmt.setString(2, member.getPass());
+      pstmt.setString(3, member.getName());
+
+      result = pstmt.executeUpdate();
+    }
+    catch (SQLException e) {
+      System.out.println("회원 가입 시 오류가 발생했습니다.");
+      e.printStackTrace();
+    }
+    finally {
+      try {
+        if (pstmt != null) { pstmt.close(); }
+      }
+      catch (Exception e) {}
+    }
+
+    return result;
   }
 
 //  회원 정보 수정
