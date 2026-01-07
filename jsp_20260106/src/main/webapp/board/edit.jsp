@@ -18,6 +18,13 @@
 
 <%@ page import="bitc.next502.jsp_20260106.database.BoardDTO" %>
 <%@ page import="bitc.next502.jsp_20260106.database.BoardDAO" %>
+<%@ page import="bitc.next502.jsp_20260106.util.JSFunction" %>
+
+<%
+  if (session.getAttribute("userId") == null) {
+    JSFunction.alertLocation("로그인 후 사용 가능합니다", "../login/login.jsp", out);
+  }
+%>
 
 <%
 //  클라이언트에서 전달받은 데이터 가져오기, 문자열을 정수로 변환
@@ -48,6 +55,7 @@
 </head>
 <body>
 
+<%@ include file="/layout/navbar.jsp" %>
 <%@ include file="/layout/header.jsp" %>
 
 <main class="container mt-5">

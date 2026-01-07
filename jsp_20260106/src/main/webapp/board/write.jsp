@@ -7,6 +7,16 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 
+<%@ page import="bitc.next502.jsp_20260106.util.JSFunction" %>
+
+<%--  1. 지정한 세션 정보가 있는지 확인 (로그인 확인) --%>
+<%--  2. 세션 정보가 있으면 UI 출력, 없으면 메시지 출력 후 로그인 페이지로 이동 --%>
+<%
+  if (session.getAttribute("userId") == null) {
+    JSFunction.alertLocation("로그인 후 사용 가능합니다", "../login/login.jsp", out);
+  }
+%>
+
 <!DOCTYPE html>
 <html lang="ko-kr">
 <head>
@@ -21,6 +31,7 @@
 </head>
 <body>
 
+<%@ include file="/layout/navbar.jsp" %>
 <%@ include file="/layout/header.jsp" %>
 
 <main class="container mt-5">
@@ -31,10 +42,14 @@
           <label for="title" class="form-label">글제목 : </label>
           <input type="text" class="form-control" id="title" name="title" placeholder="글 제목을 입력하세요">
         </div>
-        <div class="mt-3">
-          <label for="user-id" class="form-label">글쓴이 : </label>
-          <input type="text" class="form-control" id="user-id" name="userId" placeholder="사용자 ID를 입력하세요">
-        </div>
+<%--        세션에 사용자 id 가 있으니 UI 는 제거 --%>
+<%--        <div class="mt-3">--%>
+<%--          <label for="user-id" class="form-label">글쓴이 : </label>--%>
+<%--          <input type="text" class="form-control" id="user-id" name="userId" placeholder="사용자 ID를 입력하세요">--%>
+<%--        </div>--%>
+<%--        세션에 존재하는 사용자 ID를 input type=hidden 에 입력하여 서버로 전달 --%>
+<%--        <input type="hidden" name="userId" value="<%=(String)session.getAttribute("userId")%>">--%>
+
         <div class="mt-3">
           <label for="content" class="form-label">글내용 : </label>
           <textarea class="form-control" id="content" name="content" rows="10"></textarea>

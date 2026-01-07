@@ -16,7 +16,7 @@
 
 <%@ page import="bitc.next502.jsp_20260106.database.BoardDTO" %>
 <%@ page import="bitc.next502.jsp_20260106.database.BoardDAO" %>
-<%@ page import="java.net.Inet4Address" %>
+<%@ page import="bitc.next502.jsp_20260106.util.JSFunction" %>
 
 <%
 //  클라이언트에서 전달되는 데이터 문자셋 설정
@@ -45,17 +45,11 @@
 
   if (result > 0) {
 //    성공 시 list.jsp 혹은 view.jsp 로 이동
-    out.println("<script>");
-    out.println("alert('수정되었습니다.');");
-    out.println("location.href = './list.jsp';");
-    out.println("</script>");
+    JSFunction.alertLocation("수정되었습니다", "./list.jsp", out);
   }
   else {
 //    실패 시 edit.jsp 로 이동, 뒤로가기
-    out.println("<script>");
-    out.println("alert('수정에 실패했습니다.');");
-    out.println("history.back();");
-    out.println("</script>");
+    JSFunction.alertBack("수정에 실패했습니다.", out);
   }
 %>
 
