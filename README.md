@@ -43,3 +43,10 @@
 	4. JSP 기본 문법 : 게시판 글 상세 보기
 	5. JSP 기본 문법 : 게시판 글 수정하기
 	6. JSP 기본 문법 : 게시판 글 삭제하기
+9. 9일차
+	1. JSP 기본 문법 : 회원 테이블용 DTO, DAO 클래스
+	2. JSP 기본 문법 : 로그인, 로그인 처리, 로그아웃 페이지
+	3. JSP 기본 문법 : 자바스크립트 실행용 유틸 클래스 생성
+	4. JSP 기본 문법 : 오류 메시지 출력 메소드 추가
+	5. JSP 기본 문법 : 액션 태그 (include, forward, param)
+	6. JSP 기본 문법 : 액션 태그 (useBean, getProperty, setProperty)
