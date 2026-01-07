@@ -28,6 +28,9 @@
 //  데이터베이스 연결
   dao.dbOpen();
 
+//  게시글 조회수 증가
+  dao.visitCountUp(postNum);
+
 //  지정한 게시글 상세 정보 가져오기
   BoardDTO board = dao.selectBoardDetail(postNum);
 
@@ -49,6 +52,7 @@
 </head>
 <body>
 
+<%@ include file="/layout/navbar.jsp" %>
 <%@ include file="/layout/header.jsp" %>
 
 <main class="container mt-5">

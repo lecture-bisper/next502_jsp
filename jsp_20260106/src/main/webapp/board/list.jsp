@@ -43,6 +43,7 @@
 </head>
 <body>
 
+<%@ include file="/layout/navbar.jsp" %>
 <%@ include file="/layout/header.jsp" %>
 
 <main class="container mt-5">

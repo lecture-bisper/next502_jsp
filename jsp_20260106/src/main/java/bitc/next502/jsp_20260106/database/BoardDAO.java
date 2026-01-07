@@ -49,8 +49,7 @@ public class BoardDAO extends JDBConnect {
       }
     }
     catch (SQLException e) {
-      System.out.println("### 데이터 조회 중 오류가 발생했습니다.");
-      System.out.println("SQLException : " + e.getMessage());
+      printErrorMessage("데이터 조회 ", e);
     }
     finally {
       try {
@@ -79,8 +78,7 @@ public class BoardDAO extends JDBConnect {
       result = pstmt.executeUpdate();
     }
     catch (SQLException e) {
-      System.out.println("데이터 추가 중 오류가 발생했습니다.");
-      System.out.println("SQLException : " + e.getMessage());
+      printErrorMessage("데이터 추가", e);
     }
     finally {
       try {
@@ -123,8 +121,7 @@ public class BoardDAO extends JDBConnect {
       }
     }
     catch (SQLException e) {
-      System.out.println("데이터 조회 중 오류가 발생했습니다.");
-      System.out.println("SQLException : " + e.getMessage());
+      printErrorMessage("데이터 조회", e);
     }
     finally {
       try {
@@ -151,8 +148,7 @@ public class BoardDAO extends JDBConnect {
       result = pstmt.executeUpdate();
     }
     catch (SQLException e) {
-      System.out.println("데이터 수정 중 오류가 발생했습니다.");
-      System.out.println("SQLException : " + e.getMessage());
+      printErrorMessage("데이터 수정", e);
     }
     finally {
       try {
@@ -177,8 +173,7 @@ public class BoardDAO extends JDBConnect {
       result = pstmt.executeUpdate();
     }
     catch (SQLException e) {
-      System.out.println("데이터 삭제 중 오류가 발생했습니다.");
-      System.out.println("SQLException : " + e.getMessage());
+      printErrorMessage("데이터 삭제", e);
     }
     finally {
       try {
@@ -191,6 +186,35 @@ public class BoardDAO extends JDBConnect {
   }
 
 //  게시판 글 조회수 증가
+  public void visitCountUp(int num) {
+
+//    게시판 글 조회수 증가를 위한 SQL 문 생성
+    String sql = "UPDATE board SET visitcount = visitcount + 1 WHERE num = ? ";
+
+    try {
+//      Connection 을 사용하여 PreparedStatement 객체 생성
+      pstmt = conn.prepareStatement(sql);
+//      ? 에 데이터 입력
+      pstmt.setInt(1, num);
+
+//      PreparedStatement 로 SQL 문 실행
+      pstmt.executeUpdate();
+    }
+    catch (SQLException e) {
+      printErrorMessage("조회수 증가", e);
+    }
+    finally {
+      try {
+        if (pstmt != null) { pstmt.close(); }
+      } catch (Exception e) {}
+    }
+  }
+
+  @Override
+  public void printErrorMessage(String msg, Exception e) {
+    System.out.println("\n### " + msg + " 중 오류가 발생했습니다. ###\n");
+    e.printStackTrace();
+  }
 }
 
 

@@ -48,8 +48,7 @@ public class JDBConnect {
       System.out.println("\n*** 데이터베이스에 연결되었습니다. ***\n");
     }
     catch (Exception e) {
-      System.out.println("\n*** 데이터베이스 연결에 실패했습니다. ***\n");
-      e.printStackTrace();
+      printErrorMessage("데이터베이스 연결 중 오류가 발생했습니다.", e);
     }
   }
 
@@ -61,9 +60,13 @@ public class JDBConnect {
       if (conn != null) { conn.close(); }
     }
     catch (Exception e) {
-      System.out.println("\n*** 데이터베이스 연결 및 리소스 해제 중 오류가 발생했습니다. ***\n");
-      e.printStackTrace();
+      printErrorMessage("데이터베이스 연결 및 리소스 해제", e);
     }
+  }
+
+  public void printErrorMessage(String msg, Exception e) {
+    System.out.println("\n*** " + msg + " 중 오류가 발생했습니다. ***\n");
+    e.printStackTrace();
   }
 }
 
